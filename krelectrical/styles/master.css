@@ -1,0 +1,865 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Source+Serif+Pro:ital,wght@1,700&display=swap');
+
+
+/*#########################################
+
+General Page Info
+
+############################################*/
+
+:root {
+    --orange: rgb(234, 157, 59);
+    --orange-t: rgba(234, 157, 59, 0.5);
+    --pink: rgb(255, 227, 200);
+    --brown: rgb(157, 87, 22);
+    --slate: rgb(102, 95, 95);
+    --black: black;
+    --dark: #1A1917;
+    --white: white;
+    --grey: #c5bdbf;
+    --indigo: #4c4c74;
+    --blue: #11125F;
+    box-sizing: border-box;
+    background-color: var(--dark);
+  }
+  
+  main {
+      /*background-color: rgba(102, 95, 95, 0.5);
+      padding: 2em;*/
+      z-index: -100;
+      background-color: var(--dark);
+    }
+  
+  body {
+      font-family: 'Hind Siliguri', sans-serif;
+      /*background-image: url("/img/lighting_t.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;*/
+      z-index: -50;
+      overflow-x: hidden;
+  }
+
+  .smaller {  
+      width: 85vw;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  /*#########################################
+  
+  Header Styles
+  
+  ############################################*/
+  header {
+    font-family: 'Hind Siliguri', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--orange);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  header img {
+    float: left;
+    max-height: 100%;
+    max-width: 100%;
+    height: 10em;
+    width: auto;
+    object-fit: contain;
+  }
+
+  header>div:last-of-type{
+    background-color: var(--blue);
+    box-shadow: 0 0.2em 0.375em rgba(0, 0, 0, 0.25);
+  }
+
+  header p {
+    color: var(--white);
+    font-weight: bold;
+    padding: 1em 2em;
+    width: 100%;
+  }
+
+  header p span {
+      font-family:'Hind Siliguri', sans-serif;;
+  }
+
+  header p:last-of-type {
+    font-family: 'Source Serif Pro', serif;
+    text-align: right;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    text-align: right;
+  }
+
+  nav div a {
+    font-size: 1.15em;
+    text-decoration: none;
+    padding: 1em;
+    text-transform: uppercase;
+    color: var(--dark);
+    transition: 0.5s;
+  }
+
+  nav div {
+    flex: 5 5 0;
+    float: right;
+    width: 75vw;
+  }
+
+  nav a:hover {
+    color: var(--white);
+    transition: 0.5s;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .sticky + div {
+    padding-top: 102px;
+  }
+
+  .under {
+    border-bottom: 5px solid var(--orange);
+    width: 100%;
+    margin: 0 auto 2.5em;
+    padding: 2.5em 0 0.75em;
+    max-width: 85vw;
+  }
+
+  #head {
+    height: 20em;
+    transition: 1s;
+    overflow: hidden;
+  }
+
+  #head img {
+    height: 25em;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -9000;
+  }
+
+  .smaller>div {
+    margin: 4em 0;
+  }
+
+  #icon {
+    display: none;
+  }
+
+  @media (max-width: 1000px){
+    header img {
+      height: 7em;
+    }
+  }
+
+  @media (max-width: 900px) {
+    header img {
+      height: 5em;
+    }
+    nav div a {
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 800px) {
+    nav div a{display: none;}
+    #icon {
+      display: block;
+      position: absolute;
+      right: 5px;
+      top: 15px;
+    }
+    nav.responsive {position: relative;}
+    nav.responsive #icon {
+      position: absolute;
+      right: 35px;
+      top: 15px;
+    }
+    nav.responsive img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 3em;
+    }
+    nav.responsive div a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    nav.responsive div {
+      margin-top: 60px;
+      width: 100vw;
+      padding: 1em;
+    }
+    #head {
+      height: 45vh;
+      transition: 1s;
+    }
+    header>div:last-of-type{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav div {
+      flex: 5 5 0;
+      float: right;
+      width: 100%;
+    }
+    header p:last-of-type {
+      text-align: left;
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+
+  /*#########################################
+  
+  Heading Styles
+  
+  ############################################*/
+
+  h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    padding: 0.25em;
+    margin: 0.5em;
+    color: var(--white);
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.75em;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin: 0.5em;
+  }
+
+  h3 {
+      font-size: 1.15em;
+      margin-bottom: 1em;
+  }
+
+  @media (max-width: 800px) {
+      h1{
+          font-size: 2em;
+      }
+
+      h2{
+          font-size: 1.25em;
+      }
+  }
+
+  /*#########################################
+  
+  Index Styles
+  
+  ############################################*/
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1em;
+    padding: 10em 0;
+    color: var(--white);
+    background: linear-gradient(180deg, rgba(173, 173, 216, 0.3192) 23.44%, rgba(17, 18, 95, 0.42) 100%),
+    url("/img/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: 1s;
+  }
+
+  #hero > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    background-color: rgba(1, 1, 1, 0.5);
+    width: 100%;
+  }
+
+  #hero h1 {
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+    text-shadow: 0 0.2em 0.375em rgba(0, 0, 0, 0.25);
+  }
+
+  #hero h3 {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    margin-top: 1em;
+    text-align: center;
+  }
+
+  #hero p {
+    margin-bottom: 3em;
+    text-align: center;
+  }
+
+  #hero a {
+    background-color: var(--orange);
+    padding: 1em 2em;
+    margin: 1em;
+    border-radius: 5px;
+    font-weight: bolder;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--black);
+    box-shadow: 0 0.2em 0.375em rgba(0, 0, 0, 0.25);
+    transition: 0.35s ease-in-out;
+  }
+
+  #hero a:hover {
+      background-color: var(--blue);
+      color: var(--white);
+      transition: 0.35s ease-in-out;
+  }
+
+  .logos::before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.75);
+    max-width: 100vw;
+    height: 12em;
+    z-index: 0;
+    position: absolute;
+    left: -7.95vw; right: -8.75vw;
+    padding-bottom: 1em;
+  }
+
+  .logos::after {
+    content: "";
+    background-color: var(--orange);
+    position: absolute;
+    height: 1em;
+    width: 70%;
+    bottom: -2.5em; left: 0;
+    transform: translateX(-50%);
+  }
+
+  .logos {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 30;
+  }
+
+  .logos p {
+    position: relative;
+    text-align: right;
+    padding-top: 0.5em;
+    z-index: 100;
+    margin-bottom: 2em;
+  }
+
+  .logos img {
+    max-height: 10em;
+    max-width: 10em;
+    object-fit: contain;
+    z-index: 30;
+    transition: 0.5s;
+  }
+
+  .logos img:hover {
+    -webkit-filter: drop-shadow(5px 5px 15px var(--black));
+    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.35));
+    transition: 0.25s;
+    transform: scale(1.25);
+  }
+
+  #larger {
+    max-width: 15em;
+  }
+
+  .row.logo {
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0;
+  }
+
+  .logos a {
+    flex: 1 1 0;
+    padding: 0;
+    margin: 1em;
+    position: relative;
+    z-index: 30;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 10em 0;
+  }
+
+  .row div {
+    flex: 1 1 0;
+    padding: 5em 1em;
+    text-align: center;
+    margin: 2em;
+    border-top: 5px solid var(--brown);
+    border-bottom: 5px solid var(--brown);
+  }
+
+  .row h1 {
+      max-width: 100%;
+      color: var(--orange);
+      font-size: 1.65em;
+      height: 3ch;
+      margin: 1em 0;
+  }
+
+  .row p {
+    color: var(--grey);
+  }
+
+  #ind {
+    margin: 12.5em 0 10em 0;
+  }
+
+  @media (max-width:900px){
+    #hero {
+        height: 60vw;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .row div {
+      margin: 0.5em;
+      padding: 1em;
+      width: auto;
+    }
+
+    .row div:not(:last-of-type){
+      border-bottom: none;
+    }
+
+    .row div:last-of-type {
+      padding-bottom: 2.5em;
+    }
+
+    #gallery {
+      height: 60vw;
+    }
+
+    .logos::before {
+      height: 26em;
+    }
+  }
+
+  /*#########################################
+  
+  Services Styles
+  
+  ############################################*/
+
+  .res_col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .res_col > div {
+    background-color: var(--slate);
+    margin: 1em 0;
+    flex: 1 1 0;
+    margin-top: 5em;
+  }
+
+  .res_col h3 {
+    padding: 2em 2em 1em 2em;
+    border-bottom: 5px solid var(--orange);
+    font-size: 1.25em;
+    color: var(--white);
+  }
+
+  .res_col ul {
+    padding: 0 2em 2em;
+    color: var(--white);
+  }
+
+  .res_col li {
+    padding: 0.5em;
+    list-style: disc inside none;
+  }
+
+  .res_row {
+    display: flex;
+    flex-direction: row;
+    max-height: 30em;
+    margin: 10em 0;
+  }
+
+  .res_row div {
+    flex: 1 1 0;
+  }
+
+  .res_row img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .res_row.rev {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  li {
+      margin: 0.5em 0;
+  }
+
+  #test {
+    background-color: var(--grey);
+    padding: 2em;
+    margin: 10em 0;
+  }
+
+  #test h3 {
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--brown);
+    font-size: 1.25em;
+    font-weight: bolder;
+  }
+
+  @media (max-width:800px){
+    .res_row, .res_row.rev {
+      flex-direction: column;
+    }
+
+    .res_row img {
+      height: 10em;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .res_col li {
+      padding: 0em;
+    }
+  }
+
+  /*#########################################
+  
+  Contact Styles
+  
+  ############################################*/
+
+  .toprow {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 2em 0;
+    background-color: var(--blue);
+    justify-content: center;
+  }
+
+  #contact:first-child {
+    flex: 1 1 0;
+  }
+
+  #contact img {
+    height: 100%;
+    width: 100%;
+    max-height: 25vw;
+    object-fit: cover;
+  }
+
+  #contact:nth-child(2) {
+    flex: 5 5 0;
+    flex-flow: column;
+    height: 100%;
+  }
+
+  #contact h2 {
+    justify-self: center;
+    font-weight: bold;
+    border-bottom: 2px solid var(--white);
+    max-width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    color: var(--white);
+  }
+
+  form {
+    flex: 5 5 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-content: center;
+    max-width: 100%;
+    background-color: var(--slate);
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  form div{
+    display: flex;
+    flex-flow: row;
+    padding: 1em 2em 1em 1em;
+    justify-self: center;
+  }
+
+  legend {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-bottom: 5px solid var(--orange);
+    width: 100%;
+    font-size: 1.25em;
+  }
+    
+  label {
+    padding: 0 1em 0.5em;
+    text-align: left;
+    width: 100%;
+  }
+
+  #button {
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2em;
+  }
+
+  button {
+    background-color: var(--orange);
+    color: var(--blue);
+    font-size: 1em;
+    border-width: 0em;
+    padding: 0.5em 1em;
+    margin-right: 0.5em;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  textarea {
+    background-color: var(--grey);
+    resize: none;
+    width: 100%;
+    height: 100%;
+    border-width: 0em;
+    margin: 1em auto;
+    padding: 0.5em;
+  }
+
+  input {
+    background-color: var(--grey);
+    border-width: 0em;
+    color: var(--black);
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+  }
+
+  #quote {
+    flex-flow: column;
+    padding: 1em;
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+    margin: 10em 0;
+    padding: 5em 0;
+    text-align: center;
+    color: var(--white);
+  }
+
+  #details {
+    flex: 2 2 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--orange);
+    max-height: 100%;
+  }
+
+  #details > h3{
+    margin-top: 4em;
+    padding: 0 1em 0.5em;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  #details div:not(:last-of-type) {
+    display: flex;
+    flex-flow: row;
+    padding: 1em;
+    align-self: center;
+  }
+
+  i {
+    padding: 0 1em;
+  }
+
+  .hours {
+    flex: 1 1 0;
+    justify-items: center;
+    padding: 4em 2em;
+    margin-top: 4em;
+    background-color: var(--grey);
+    border-top: 5px solid var(--blue);
+    text-align: center;
+  }
+
+  .hours h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--dark);
+    padding-bottom: 0.5em;
+  }
+
+  @media (max-width:800px){
+    .toprow{
+      flex-direction: column;
+    }
+
+    legend {
+      text-align: center;
+      padding: 1em 0;
+      width: 100%;
+    }
+
+    form div{
+      flex-direction: column;
+      padding: 0 0.75em 0 0;
+    }
+
+    label {
+      width: 80%;
+      margin: 1em auto 0 auto;
+      padding: 0;
+    }
+
+    #button {
+      margin: 2em 0;
+    }
+
+    textarea {
+      height: 8em;
+    }
+  }
+
+  /*#########################################
+  
+  About Styles
+  
+  ############################################*/
+
+  .ab_row {
+      display: flex;
+      background-color: var(--slate);
+  }
+
+  .ab_row div:first-of-type{
+    flex: 1 1 0;
+  }
+
+  .ab_row img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  .ab_row div:last-of-type{
+    flex: 1 1 0;
+    margin: 1em;
+    padding: 1em;
+    color: var(--white);
+    border-left: 5px solid var(--orange);
+  }
+
+  .ab_row p {
+      padding: 0.5em 0;
+      font-weight: lighter;
+  }
+
+  .ab_row h3 {
+      font-size: 1.5em;
+  }
+
+  @media (max-width: 800px) {
+    .ab_row {
+        flex-direction: column;
+    }
+    .ab_row div:first-of-type{
+        height: 15em;
+    }
+  }
+
+  /*#########################################
+  
+  Footer Styles
+  
+  ############################################*/
+
+  footer {
+    font-family: 'Hind Siliguri', sans-serif;
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    background-color: var(--orange);
+    padding: 1.5em 1em;
+  }
+
+  footer div {
+    flex: 1 1 0;
+    text-align: right;
+    justify-self: right;
+  }
+
+  footer p {
+    margin-top: 1em;
+    color: var(--blue);
+    font-size: 0.75em;
+  }
+
+  strong {
+    font-weight: bold;
+    color: var(--blue);
+    font-size: 1em;
+  }
+
+  @media (max-width: 800px) { 
+    footer{
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    footer div {
+      text-align: left;
+    }
+  }
